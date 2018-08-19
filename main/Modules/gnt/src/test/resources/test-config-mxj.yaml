@@ -1,0 +1,53 @@
+#template: Hello, %s!
+#defaultName: Stranger
+#
+#database:
+#  driverClass: org.h2.Driver
+#  user: sa
+#  password: sa
+#  url: jdbc:h2:./target/test-example
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 0
+  adminConnectors:
+    - type: http
+      port: 0
+
+# Logging settings.
+logging:
+  level: INFO
+  appenders:
+    - type: console
+    - type: file
+      currentLogFilename: './logs/application.log'
+      archivedLogFilenamePattern: './logs/application-%d-%i.log.gz'
+      archive: true
+      archivedFileCount: 7
+      maxFileSize: '1mb'
+
+db:
+#  # DB backend type. Allowed values are: embedded, mysql.
+#  type: mysql
+#
+#  # Mysql instance configurations
+#  host: localhost
+#  port: 3306
+#  userName: i2dev
+#  password: i2test
+
+  # Connection pool size string, in the format of
+  # initialSize:maxActive:maxIdle:minIdle.
+#  pool: 10:50:20:5
+
+  # Uncomment the following to use the embedded mysql.
+   type: embedded
+
+  # Optional - embedded mysql working directory. This is for embedded mysql only,
+  # default is /tmp/cible/deploy-unit-test.
+  # Sometimes when the embedded mysql failed to start for whatever the reasons,
+  # delete the working dir often resolve the issue.
+   workDir: /tmp/cible/db
+
+mybatisConfig: mybatis/test-mybatis-config-mxj.xml
