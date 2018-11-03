@@ -1,0 +1,2 @@
+org.bls.gnt.config.MysqlDataSourceFactory
+org.bls.gnt.config.EmbeddedDataSourceFactory

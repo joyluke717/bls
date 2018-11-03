@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/gnt"/>
+                <property name="username" value="i2dev"/>
+                <property name="password" value="i2test"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="org/bls/gnt/db/xml/GntWordBeanMapper.xml"/>
+        <mapper resource="org/bls/gnt/db/xml/GntTextBeanMapper.xml"/>
+        <mapper resource="org/bls/gnt/db/xml/GntBookBeanMapper.xml"/>
+        <mapper resource="org/bls/gnt/db/xml/GntLexiconBeanMapper.xml"/>
+    </mappers>
+</configuration>

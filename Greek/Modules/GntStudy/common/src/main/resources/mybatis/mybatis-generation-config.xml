@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	
+	<!-- <classPathEntry location="/Users/i2dev/Tools/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar" /> -->
+	<classPathEntry location="F:\\Tools\\mysql-connector-java-5.1.45\\mysql-connector-java-5.1.45-bin.jar" /> 
+  	<context id="GntTables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/gnt"
+            userId="i2dev" password="i2test">
+        <property name="nullCatalogMeansCurrent" value="true" />
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+	<!--  in command line environment 
+    <javaModelGenerator targetPackage="org.blem.greek.db.model" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="org.blem.greek.db.xml"  targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="org.blem.greek.db.mapper"  targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+	-->
+
+	<!--  in eclipse environment    -->
+    <javaModelGenerator targetPackage="org.bls.gnt.db.model" targetProject="common/src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="org.bls.gnt.db.xml"  targetProject="common/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="org.bls.gnt.db.mapper"  targetProject="common/src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator>
+
+  
+    <table schema="gnt" tableName="gnt_book" domainObjectName="GntBookBean">
+   	    <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+ 	<table schema="gnt" tableName="gnt_word" domainObjectName="GntWordBean">
+   	    <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+
+     <table schema="gnt" tableName="gnt_lexicon" domainObjectName="GntLexiconBean">
+   	    <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+    
+      <table schema="gnt" tableName="gnt_text" domainObjectName="GntTextBean">
+   	    <generatedKey column="id" sqlStatement="MySql" identity="true" />
+    </table>
+  </context>
+</generatorConfiguration>
